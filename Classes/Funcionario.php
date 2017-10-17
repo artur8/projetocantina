@@ -17,6 +17,7 @@ class Funcionario extends Usuario{
         $this->CPF = $_CPF;
         $this->RG = $_RG;
     }
+<<<<<<< HEAD
     
     function getIdFuncionario() {
         return $this->IdFuncionario;
@@ -89,4 +90,6 @@ class Funcionario extends Usuario{
             $link->query($query2) or die($link->error);
             parent:: DeletarUsuario($link);
     }
+=======
+>>>>>>> origin/master
 }

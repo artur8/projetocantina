@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <?php
 require_once '../../../Classes/Usuario.php';
-require_once '../../../Includes/VerificaLoginFuncionario.php';
+require_once '../../../Includes/VerificaLogin.php';
 
 
 ?>
