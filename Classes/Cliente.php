@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Usuario.php';
-<<<<<<< HEAD
 require_once '../Includes/conexao.php';
 
 class Cliente extends Usuario{
@@ -37,7 +36,6 @@ class Cliente extends Usuario{
     }
 
     }
-=======
 
 class Cliente extends Usuario{
     private $IdCliente;
@@ -49,4 +47,4 @@ class Cliente extends Usuario{
         $this->Ocupacao = $_Ocupacao;
     }
 }
->>>>>>> origin/master
+

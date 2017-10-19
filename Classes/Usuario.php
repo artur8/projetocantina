@@ -1,8 +1,8 @@
 <?php
 //session_start();
-<<<<<<< HEAD
 //require_once '../../../Includes/conexao.php';
 require_once '../Includes/conexao.php';
+require_once '../../../Includes/conexao.php';
 class Usuario{
     protected $IdUsuario;
     protected $Nome;
@@ -109,9 +109,9 @@ class Usuario{
           $link->query($query) or die($link->error);
       }
       
-=======
-require_once '../../../Includes/conexao.php';
-class Usuario{
+
+
+/*class Usuario{
     protected $IdUsuario;
     protected $Nome;
     protected $DataNasc;
@@ -187,8 +187,7 @@ class Usuario{
         
     }
     
->>>>>>> origin/master
     
-           
+   */        
 }
     

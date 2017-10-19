@@ -11,7 +11,6 @@ class Administrador extends Usuario{
         $this->IdAdministrador = $_IdAdministrador;
         $this->CNPJ = $_CNPJ;
     }
-<<<<<<< HEAD
     
     function getIdAdministrador() {
         return $this->IdAdministrador;
@@ -32,6 +31,4 @@ class Administrador extends Usuario{
    
 
 
-=======
->>>>>>> origin/master
 }
