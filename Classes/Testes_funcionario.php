@@ -3,8 +3,8 @@
     require_once 'Funcionario.php';
     require_once 'Usuario.php';
     
-   /* 
-    *  //CADASTRAR FUNCIONARIO
+    
+      //CADASTRAR FUNCIONARIO
     $ObjFuncionario = new Funcionario(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
     $ObjFuncionario->FormularioFuncionario();
     
@@ -20,9 +20,9 @@
         
        $ObjFuncionario->CadastroFuncionario($link);
     }
-    */
     
-        //UPDATE DE FUNCIONARIO
+    
+      /*  //UPDATE DE FUNCIONARIO
     $ObjFuncionario = new Funcionario(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
     $ObjFuncionario->Form_deletar();
     

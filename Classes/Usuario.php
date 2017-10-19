@@ -2,7 +2,7 @@
 //session_start();
 //require_once '../../../Includes/conexao.php';
 require_once '../Includes/conexao.php';
-require_once '../../../Includes/conexao.php';
+//require_once '../../../Includes/conexao.php';
 class Usuario{
     protected $IdUsuario;
     protected $Nome;
