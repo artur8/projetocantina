@@ -15,7 +15,7 @@ require_once 'head.php';
                   <div class="logo">
                     <h1>Aplicantina</h1>
                   </div>
-                  <p>Sistema para você não enfrentar fila no seu horário de intervalo</p>
+                  <p>Software auxiliar de redução de filas em cantinas escolares</p>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@ require_once 'head.php';
                       <label for="login-password" class="label-material">Senha</label>
                     </div><a id="login" href="index.html" class="btn btn-primary">Login</a>
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-                  </form><a href="#" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
+                  </form><a href="#" class="forgot-pass">Esqueceu sua senha?</a><br>
                 </div>
               </div>
             </div>
