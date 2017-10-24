@@ -22,6 +22,11 @@ require_once 'menu.php';
           
           <!-- Page Footer-->
           
+          <form>
+              <input style="width:50px" min="0"  type="number">
+              
+          </form>
+          
         </div>
       </div>
       <?php
