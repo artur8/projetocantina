@@ -1,8 +1,48 @@
 <!DOCTYPE html>
 <?php
 require_once 'head.php';
+//require_once '../Includes/botao.js';
+require_once '../Includes/botao.css';
 ?>
+
   <body>
+    <script src="scripts/main.js">
+        jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+        jQuery('.quantity').each(function() {
+        var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+   </script>
+    <div class="quantity">
+        <input type="number" min="1" max="9" style="width:80px" step="1" value="1">
+    </div>
     <div class="page home-page">
       <!-- Main Navbar-->
       <header class="header">

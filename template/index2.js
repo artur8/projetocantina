@@ -2,8 +2,8 @@
  
 <html>
     
-    <script>
-        jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+      <script src="scripts/main.js">
+   jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function() {
       var spinner = jQuery(this),
         input = spinner.find('input[type="number"]'),
@@ -35,8 +35,7 @@
       });
 
     });
-    </script>
-
+   </script>
    <style>
        .quantity {
   position: relative;
@@ -118,8 +117,8 @@ input[type=number]
 <?php 
 require_once 'cabecalho.php';
 require_once 'menu.php';
-//require_once '../Includes/botao.js';
-//require_once '../Includes/botao.css';
+require_once '../Includes/botao.js';
+require_once '../Includes/botao.css';
 ?>
   
           <!-- Dashboard Counts Section-->
@@ -195,7 +194,7 @@ require_once 'menu.php';
                             <td>@fat</td>
                             <td> 
                                 <div class="quantity">
-                                    <input type="number" min="1" max="9" style="width:80px" step="1" value="1">
+                                     <input type="number" min="1" max="9" step="1" value="1">
                                 </div>
                             </td>
                           </tr>
