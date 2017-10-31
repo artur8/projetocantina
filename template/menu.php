@@ -1,4 +1,4 @@
-    <div class="page-content d-flex align-items-stretch">
+        <div class="page-content d-flex align-items-stretch">
         <!-- Side Navbar -->
         <nav class="side-navbar">
           <!-- Sidebar Header-->
@@ -9,15 +9,15 @@
               <p>Web Designer</p>
             </div>
           </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <!-- Sidebar Navidation Menus--><span class="heading">Menu</span>
           <ul class="list-unstyled">
-            <li class="active"> <a href="./"><i class="icon-home"></i>Home</a></li>
-            <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Dropdown </a>
+            <li class="active"> <a href="./index2.php"><i class="icon-home"></i>Compra</a></li>
+            <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Cadastro </a>
               <ul id="dashvariants" class="collapse list-unstyled">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="#">Produto</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Funcionário</a></li>
+                <li><a href="#">Administrador</a></li>
               </ul>
             </li>
             <li> <a href="tables.php"> <i class="icon-grid"></i>Tables </a></li>

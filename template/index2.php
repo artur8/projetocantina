@@ -2,7 +2,7 @@
  
 <html>
     
-    <script>
+    <!--<script>
         jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
     jQuery('.quantity').each(function() {
       var spinner = jQuery(this),
@@ -107,7 +107,7 @@ input[type=number]
   bottom: -1px;
   height: 50%;
 } 
-   </style>
+   </style>-->  
     <?php
     require_once 'head.php';
     ?>
@@ -147,7 +147,7 @@ require_once 'menu.php';
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>huh</td>
                             <td> <form>
                                     <input style="width:50px" min="0"  type="number">
                                 </form>
@@ -195,7 +195,7 @@ require_once 'menu.php';
                             <td>@fat</td>
                             <td> 
                                 <div class="quantity">
-                                    <input type="number" min="1" max="9" style="width:80px" step="1" value="1">
+                                    <input type="number" min="0" style="width:50px" >
                                 </div>
                             </td>
                           </tr>
@@ -203,10 +203,7 @@ require_once 'menu.php';
                       </table>
                     </div>
           
-          <form>
-              <input style="width:50px" min="0"  type="number">
-              
-          </form>
+      
           
         </div>
       </div>
