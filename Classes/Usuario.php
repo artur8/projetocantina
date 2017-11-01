@@ -6,16 +6,23 @@ require_once '../Includes/conexao.php';
 class Usuario{
     protected $IdUsuario;
     protected $Nome;
-    protected $DataNasc;
     protected $Email;
     protected $Senha;
-    
-    public function __construct($_IdUsuario, $_Nome, $_DataNasc, $_Email, $_Senha) {
+    protected $DataNasc;
+    protected $CPF;
+
+
+
+
+
+
+    public function __construct($_IdUsuario, $_Nome, $_DataNasc, $_Email, $_Senha, $_CPF) {
         $this->IdUsuario = $_IdUsuario;
         $this->Nome = $_Nome;
         $this->DataNasc = $_DataNasc;
         $this->Email = $_Email;
         $this->Senha = $_Senha;
+        $this->CPF = $_CPF;
     }
     
     public function GetIdUsuario(){
@@ -45,10 +52,15 @@ class Usuario{
     public function SetSenha($_Senha){
         $this->Senha = $_Senha;
     }
+    public function GetCPF (){
+       return $this->CPF;
+    }
+    public function SetCPF($_CPF){
+        $this->CPF = $_CPF;
+    }
+    
 
     public function Login($link){
-   
-  
         $query = "SELECT * FROM Usuario AS U INNER JOIN Funcionario AS F ON F.idUsuario = U.idUsuario "
                  ."WHERE Email LIKE '$this->Email' AND Senha LIKE '$this->Senha';";
         //echo "<h1>Funcionario " .$query . "</h1>";
@@ -74,35 +86,16 @@ class Usuario{
             setcookie('LogadoAdmin', 1, time()+60*10);
             header("Location:index_admin.php");
         
-    } 
-    }
-    }
+     } 
+     }
+     }
     
       public function CadastroUsuario($link){ 
             $query = "INSERT INTO Usuario VALUES (NULL, '$this->Nome', '$this->DataNasc', '$this->Email', '$this->Senha')";
             $link->query($query) or die ($link->error);
             $this->IdUsuario = $link->insert_id;
       }
-      
-      public function Formulario(){
-         echo "<form method='POST'>
-          Nome:
-            <br><input type='text' name='Nome'><br>
-          Dtas: 
-            <br><input type='text' name='Data'><br>
-          Email:
-            <br><input type='text' name='Email'><br>
-          Senha:
-            <br><input type='text' name='Senha'><br> ";
-      }
-      
-      public function Form_deletar(){
-          echo "<form method='POST'>
-                  Email: 
-                  <br><input type='text' name='Email'><br>
-                  <input type='submit' name='Excluir' value='Excluir'>
-                </form>";
-      }
+    
       
       public function DeletarUsuario($link){
           $query = "DELETE FROM Usuario WHERE Email like '$this->Email';";
