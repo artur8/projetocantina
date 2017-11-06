@@ -132,7 +132,7 @@ require_once 'menu.php';
           
           <!-- Page Footer-->
        
-          <div class="card-body" style="width:35%; margin-left: 7%">
+          <div class="card-body" style="width:40%; float:right">
                       <table class="table table-striped">
                         <thead>
                           <tr>
@@ -167,7 +167,7 @@ require_once 'menu.php';
                       </table>
                     </div>
           
-                    <div class="card-body" style="width:35%; margin-left: 54%; margin-top: -21%">
+                    <div class="card-body" style="width:40%;">
                       <table class="table table-striped">
                         <thead>
                           <tr>
@@ -202,15 +202,43 @@ require_once 'menu.php';
                         </tbody>
                       </table>
                     </div>
-          
-      
+                <div style="text-align:center">
+                    <div class="form-group row">
+                        <div class="card-header d-flex align-items-center" style="margin:auto; width: 40%">
+                            <div class="col-sm-9" style="margin:auto">
+                            <div class="i-checks">
+                              <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                              <label for="radioCustom1">Dinheiro</label>
+                            </div>
+                            <div class="i-checks">
+                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                                <label for="radioCustom1">Cartão Crédito</label>
+                            </div>
+                            <div class="i-checks">
+                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                                <label for="radioCustom1">Cartão Cantina</label>
+                          </div>
+                                <div style="margin: auto">
+                                    <input type="button" class="btn btn-primary" value="Finalizar" >
+                                </div>
+                                
+                            </div>
+                            </div>
+                      </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           
         </div>
       </div>
       <?php
           include 'rodape.php';
         ?>
-    </div>
+        </div>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
