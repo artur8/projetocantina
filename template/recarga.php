@@ -18,7 +18,8 @@ require_once 'menu.php';
       
             
       
-      <div class="card-header d-flex align-items-center">
+      <div class="card-header d-flex align-items-center"> 
+     
           <div class="card-body">
                           
 
@@ -54,7 +55,6 @@ require_once 'menu.php';
                           </div>
                         </div>
                         
-                        <!-- FIM DO FORM -->
                         
                         
                         <div class="line"></div>
@@ -95,21 +95,34 @@ require_once 'menu.php';
                               <input id="radioCustom5" type="radio" checked="" value="option5" name="a" class="radio-template">
                               <label for="radioCustom3">Opção 5</label>
                             </div>
-
-
                             
+                            <!-- CANCELAR E SALVAR - BUTTON -->
+                            <br><br><div class="form-group row">
+                                    <!-- <div class="col-sm-4 offset-sm-3"> -->
+                                    <button type="submit" class="btn btn-secondary">Cancel</button> &nbsp;
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                           
                           </div>
-                        </div>
+                            
+
+                          </div>
+                      
+                      
                                                 
-                  
+                      </form>
                       <!-- FIM DO FORM -->  
                          
                     </div>
-      </div>
+                                  </div>
+
+
+
                      
         
           
       <?php
+        echo "<br>";
           include 'rodape.php';
         ?>
 
