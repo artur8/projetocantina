@@ -113,11 +113,12 @@ input[type=number]
     ?>
 
   <body>
-    <div class="page home-page">
+      <div class="page home-page">
       <!-- Main Navbar-->
 <?php 
 require_once 'cabecalho.php';
 require_once 'menu.php';
+
 //require_once '../Includes/botao.js';
 //require_once '../Includes/botao.css';
 ?>
@@ -131,8 +132,8 @@ require_once 'menu.php';
           <!-- Client Section-->
           
           <!-- Page Footer-->
-       
-          <div class="card-body" style="width:40%; float:right">
+          <div >
+          <div class="card-body" style="width:40%; float:right; background-color: pink;">
                       <table class="table table-striped">
                         <thead>
                           <tr>
@@ -203,42 +204,47 @@ require_once 'menu.php';
                       </table>
                     </div>
                 <div style="text-align:center">
+                    <form method="GET" action="">
                     <div class="form-group row">
                         <div class="card-header d-flex align-items-center" style="margin:auto; width: 40%">
                             <div class="col-sm-9" style="margin:auto">
                             <div class="i-checks">
-                              <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom1">Dinheiro</label>
                             </div>
                             <div class="i-checks">
-                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="sumir(this.value)">
                                 <label for="radioCustom1">Cartão Crédito</label>
                             </div>
-                            <div class="i-checks">
-                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template">
+                            <div class="i-checks" >
+                                <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="dadosCartao(this.value)">
                                 <label for="radioCustom1">Cartão Cantina</label>
                           </div>
+                                <div id="poll">
+                                    
+                                </div> 
                                 <div style="margin: auto">
                                     <input type="button" class="btn btn-primary" value="Finalizar" >
                                 </div>
                                 
                             </div>
                             </div>
-                      </form>
+                      
                     </div>
                 </div>
                 </div>
-              </div>
-            </div>
-          </section>
-
           
-        </div>
-      </div>
+             
+            
+       
+          
+       
+ 
+     
       <?php
           include 'rodape.php';
+          ECHO "</div>";
         ?>
-        </div>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
