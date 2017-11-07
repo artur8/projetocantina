@@ -18,7 +18,7 @@ require_once 'menu.php';
       
             
       
-      <div class="card-header d-flex align-items-center"> 
+      <div class="card-header d-flex align-items-center" style="width: 90%; height:70%; margin: auto; margin-top: 3%"> 
      
           <div class="card-body">
                           
@@ -74,26 +74,30 @@ require_once 'menu.php';
                               
                             <!-- OPÇÃO 2 -->
                             <div class="i-checks">
-                              <input id="radioCustom2" type="radio" checked="" value="option2" name="a" class="radio-template">
+                              <input id="radioCustom2" type="radio" value="option2" name="a" class="radio-template">
                               <label for="radioCustom2">Opção 2</label>
                             </div>
                             
                             <!-- OPÇÃO 3 -->
                             <div class="i-checks">
-                              <input id="radioCustom3" type="radio" checked="" value="option3" name="a" class="radio-template">
+                              <input id="radioCustom3" type="radio" value="option3" name="a" class="radio-template">
                               <label for="radioCustom3">Opção 3</label>
                             </div>
                           
                             <!-- OPÇÃO 4 -->
                             <div class="i-checks">
-                              <input id="radioCustom4" type="radio" checked="" value="option4" name="a" class="radio-template">
+                              <input id="radioCustom4" type="radio" value="option4" name="a" class="radio-template">
                               <label for="radioCustom3">Opção 4</label>
                             </div>
                             
                             <!-- OPÇÃO 5 -->
                             <div class="i-checks">
-                              <input id="radioCustom5" type="radio" checked="" value="option5" name="a" class="radio-template">
+                                <input id="radioCustom5" type="radio" value="option5" name="a" class="radio-template" onclick="recarga(this.value)">
                               <label for="radioCustom3">Opção 5</label>
+                            </div>
+                            <br>
+                            <div id="poll">
+                                
                             </div>
                             
                             <!-- CANCELAR E SALVAR - BUTTON -->
@@ -120,11 +124,11 @@ require_once 'menu.php';
 
                      
         
-          
+      <div style="margin-top: 8%">
       <?php
-        echo "<br>";
           include 'rodape.php';
         ?>
+      </div>
 
     </div>
     <!-- Javascript files-->
