@@ -132,8 +132,9 @@ require_once 'menu.php';
           <!-- Client Section-->
           
           <!-- Page Footer-->
-          <div >
-          <div class="card-body" style="width:40%; float:right; background-color: pink;">
+          <div style="width:90%;">
+              <div style="margin-left: 10%; width:80%">
+          <div class="card-body" style="width:40%; float: left">
                       <table class="table table-striped">
                         <thead>
                           <tr>
@@ -167,8 +168,10 @@ require_once 'menu.php';
                         </tbody>
                       </table>
                     </div>
-          
-                    <div class="card-body" style="width:40%;">
+                    
+                
+              
+                    <div class="card-body" style=" width:40%; float:right;">
                       <table class="table table-striped">
                         <thead>
                           <tr>
@@ -203,7 +206,10 @@ require_once 'menu.php';
                         </tbody>
                       </table>
                     </div>
-                <div style="text-align:center">
+          </div>
+              <div>
+                  <div>
+                <div style="padding-top:25%; text-align:center">
                     <form method="GET" action="">
                     <div class="form-group row">
                         <div class="card-header d-flex align-items-center" style="margin:auto; width: 40%">
@@ -229,11 +235,12 @@ require_once 'menu.php';
                                 
                             </div>
                             </div>
-                      
+             
                     </div>
+                               </form>
                 </div>
                 </div>
-          
+              </div></div>
              
             
        
@@ -242,7 +249,7 @@ require_once 'menu.php';
  
      
       <?php
-          include 'rodape.php';
+         // include 'rodape.php';
           ECHO "</div>";
         ?>
     <!-- Javascript files-->
