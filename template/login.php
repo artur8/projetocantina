@@ -13,7 +13,8 @@ require_once 'head.php';
               <div class="info d-flex align-items-center">
                 <div class="content">
                   <div class="logo">
-                    <h1>Aplicantina</h1>
+                      <img src = "logo.png" height="200px" width="480px"/>
+                   <!-- <h1>Aplicantina</h1> -->
                   </div>
                   <p>Software auxiliar de redução de filas em cantinas escolares</p>
                 </div>
