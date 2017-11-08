@@ -12,13 +12,13 @@
           <!-- Sidebar Navidation Menus--><span class="heading">Menu</span>
           <ul class="list-unstyled">
             <li class="active"> <a href="./index2.php"><i class="icon-home"></i>Compra</a></li>
-            <li> <a href="tables.php"> <i class="icon-website"></i>Recarga de Cartão </a></li>
+            <li> <a href="recarga.php"> <i class="icon-website"></i>Recarga de Cartão </a></li>
             <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Cadastro </a>
               <ul id="dashvariants" class="collapse list-unstyled">
-                <li><a href="#">Produto</a></li>
-                <li><a href="#">Cardápio</a></li>
-                <li><a href="#">Funcionário</a></li>
-                <li><a href="#">Administrador</a></li>
+                <li><a href="cadastroProduto.php">Produto</a></li>
+                <li><a href="cadastroCardapio.php">Cardápio</a></li>
+                <li><a href="cadastroFuncionario.php">Funcionário</a></li>
+                <li><a href="cadastroAdministrador.php">Administrador</a></li>
               </ul>
             </li>
             <li> <a href="tables.php"> <i class="icon-grid"></i>Tables </a></li>

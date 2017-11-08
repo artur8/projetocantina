@@ -1,5 +1,5 @@
 <form>
-    
+ 
 </form>
 
 <div class="form-group">
@@ -10,6 +10,6 @@
                 <input type="text" class="form-control" style="width: 70%;">
             </form>
         </div>
-
+</div>
 
                         
