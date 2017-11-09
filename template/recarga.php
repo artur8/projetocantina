@@ -10,13 +10,7 @@
 <?php 
 require_once 'cabecalho.php';
 require_once 'menu.php';
-?>
-      <!--<br><br><form name = "recarga" action= " " method = "POST">
-      <label class="col-sm-3 form-control-label">CPF:</label>
-       <input type="text" class="form-control" style = "width:300px">
-      </form> -->
-      
-            
+?>            
       
       <div class="card-header d-flex align-items-center" style="width: 90%; height:70%; margin: auto; margin-top: 3%"> 
      
@@ -103,8 +97,8 @@ require_once 'menu.php';
                             <!-- CANCELAR E SALVAR - BUTTON -->
                             <br><br><div class="form-group row">
                                     <!-- <div class="col-sm-4 offset-sm-3"> -->
-                                    <button type="submit" class="btn btn-secondary">Cancel</button> &nbsp;
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
+                                        <button type="submit" class="btn btn-primary">Recarregar</button>
                                     </div>
                            
                           </div>
@@ -134,7 +128,7 @@ require_once 'menu.php';
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <scrip<!-- t src="js/bootstrap.min.js"></script>
     <script src="js/jquery.cookie.js"> </script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
