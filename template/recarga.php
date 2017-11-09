@@ -10,7 +10,13 @@
 <?php 
 require_once 'cabecalho.php';
 require_once 'menu.php';
-?>            
+?>
+      <!--<br><br><form name = "recarga" action= " " method = "POST">
+      <label class="col-sm-3 form-control-label">CPF:</label>
+       <input type="text" class="form-control" style = "width:300px">
+      </form> -->
+      
+            
       
       <div class="card-header d-flex align-items-center" style="width: 90%; height:70%; margin: auto; margin-top: 3%"> 
      
@@ -22,7 +28,7 @@ require_once 'menu.php';
                       <form class="form-horizontal">
                         
                            <!-- CPF - ENABLED -->
-                          <div class="form-group row">
+                           <div class="form-group row" style="padding-top: 10%">
                           <label class="col-sm-3 form-control-label">CPF</label>
                           <div class="col-sm-9">
                               <input type="text" name="cpf" placeholder="Digite aqui..." class="form-control">
@@ -62,25 +68,25 @@ require_once 'menu.php';
                           
                             <!-- OPÇÃO 1 -->
                             <div class="i-checks">
-                              <input id="radioCustom1" type="radio" value="option1" name="a" class="radio-template">
+                                <input id="radioCustom1" type="radio" value="option1" name="a" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom1">Opção 1</label>
                             </div>
                               
                             <!-- OPÇÃO 2 -->
                             <div class="i-checks">
-                              <input id="radioCustom2" type="radio" value="option2" name="a" class="radio-template">
+                                <input id="radioCustom2" type="radio" value="option2" name="a" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom2">Opção 2</label>
                             </div>
                             
                             <!-- OPÇÃO 3 -->
                             <div class="i-checks">
-                              <input id="radioCustom3" type="radio" value="option3" name="a" class="radio-template">
+                                <input id="radioCustom3" type="radio" value="option3" name="a" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom3">Opção 3</label>
                             </div>
                           
                             <!-- OPÇÃO 4 -->
                             <div class="i-checks">
-                              <input id="radioCustom4" type="radio" value="option4" name="a" class="radio-template">
+                                <input id="radioCustom4" type="radio" value="option4" name="a" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom3">Opção 4</label>
                             </div>
                             
@@ -97,8 +103,8 @@ require_once 'menu.php';
                             <!-- CANCELAR E SALVAR - BUTTON -->
                             <br><br><div class="form-group row">
                                     <!-- <div class="col-sm-4 offset-sm-3"> -->
-                                    <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
-                                        <button type="submit" class="btn btn-primary">Recarregar</button>
+                                    <button type="submit" class="btn btn-secondary">Cancel</button> &nbsp;
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
                            
                           </div>
@@ -114,21 +120,11 @@ require_once 'menu.php';
                     </div>
                                   </div>
 
-
-
-                     
-        
-      <div style="margin-top: 8%">
-      <?php
-          include 'rodape.php';
-        ?>
-      </div>
-
     </div>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
-    <scrip<!-- t src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.cookie.js"> </script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -151,5 +147,3 @@ require_once 'menu.php';
   </body>
 
 </html>
-
-
