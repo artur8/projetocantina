@@ -59,4 +59,9 @@ class Funcionario extends Usuario{
         $this->RG = $RG;
     }
     
+  
+        
+        
+    }
+    
 }

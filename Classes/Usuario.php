@@ -14,8 +14,6 @@ class Usuario{
 
 
 
-
-
     public function __construct($_IdUsuario, $_Nome, $_DataNasc, $_Email, $_Senha, $_CPF) {
         $this->IdUsuario = $_IdUsuario;
         $this->Nome = $_Nome;

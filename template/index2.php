@@ -2,126 +2,21 @@
  
 <html>
     
-    <!--<script>
-        jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
-    jQuery('.quantity').each(function() {
-      var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
-
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-    });
-    </script>
-
-   <style>
-       .quantity {
-  position: relative;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button
-{
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number]
-{
-  -moz-appearance: textfield;
-}
-
-.quantity input {
-  width: 45px;
-  height: 42px;
-  line-height: 1.65;
-  float: left;
-  display: block;
-  padding: 0;
-  margin: 0;
-  padding-left: 20px;
-  border: 1px solid #eee;
-}
-
-.quantity input:focus {
-  outline: 0;
-}
-
-.quantity-nav {
-  float: left;
-  position: relative;
-  height: 42px;
-}
-
-.quantity-button {
-  position: relative;
-  cursor: pointer;
-  border-left: 1px solid #eee;
-  width: 20px;
-  text-align: center;
-  color: #333;
-  font-size: 13px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
-  line-height: 1.7;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-.quantity-button.quantity-up {
-  position: absolute;
-  height: 50%;
-  top: 0;
-  border-bottom: 1px solid #eee;
-}
-
-.quantity-button.quantity-down {
-  position: absolute;
-  bottom: -1px;
-  height: 50%;
-} 
-   </style>-->  
+  
     <?php
+    require_once '../Includes/conexao.php';
     require_once 'head.php';
+    require_once 'cabecalho.php';
+    require_once 'menu.php';
+    require_once '../Classes/Cardapio.php';
+    
+    $ObjCardapio = new Cardapio(NULL, NULL, NULL);
+    
     ?>
 
   <body>
       <div class="page home-page">
       <!-- Main Navbar-->
-<?php 
-require_once 'cabecalho.php';
-require_once 'menu.php';
-
-//require_once '../Includes/botao.js';
-//require_once '../Includes/botao.css';
-?>
   
           <!-- Dashboard Counts Section-->
           
@@ -135,74 +30,36 @@ require_once 'menu.php';
           <div style="width:90%;">
               <div style="margin-left: 10%; width:80%">
           <div class="card-body" style="width:40%; float: left">
-                      <table class="table table-striped">
+                    <table class="table table-striped">
                         <thead>
+                          <label>Lanches</label>
                           <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>Lanches</th>
+                            <th>Preço</th>
+                            <th>Qnts</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>huh</td>
-                            <td> <form>
-                                    <input style="width:50px" min="0"  type="number">
-                                </form>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td> <form>
-                                    <input style="width:50px" min="0"  type="number">
-                                </form>
-                            </td>
-                          </tr>
+                        <?php 
+                           $ObjCardapio->MontaTabelaLanches($link);
+                        ?>
                         </tbody>
-                      </table>
-                    </div>
+                    </table>
                     
                 
               
                     <div class="card-body" style=" width:40%; float:right;">
                       <table class="table table-striped">
-                        <thead>
+                        <thead> 
+                          <label> Bebibas</label>
                           <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            <th>Produto</th>
+                            <th>Valor</th>
+                            <th>Preço</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td> <form>
-                                    <input style="width:50px" min="0"  type="number">
-                                </form>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td> 
-                                <div class="quantity">
-                                    <input type="number" min="0" style="width:50px" >
-                                </div>
-                            </td>
-                          </tr>
+                            <?php $ObjCardapio->MontaTabelaBebidas($link);?>
                         </tbody>
                       </table>
                     </div>
