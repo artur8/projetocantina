@@ -13,9 +13,9 @@ class Cardapio{
     
     //Criar __construct e get set
     public function MontaTabelaLanches($link){
-        $query = "select p.descricao, p.valor, c.Descricao
+        $query = "select p.descricao, p.valor, c.NomeCategoria
             from produto as p inner join categoria as c 
-            ON p.idCategoria = c.idCategoria AND c.descricao <> 'Bebidas';";
+            ON p.idCategoria = c.idCategoria AND c.NomeCategoria <> 'Bebidas';";
         $resultado = $link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  
@@ -31,9 +31,9 @@ class Cardapio{
     }
     
     public function MontaTabelaBebidas($link){
-        $query = "select p.descricao, p.valor, c.Descricao "
+        $query = "select p.descricao, p.valor, c.NomeCategoria "
                 . "from produto as p inner join categoria as c ON"
-                . " p.idCategoria = c.idCategoria AND c.descricao = 'Bebidas';";
+                . " p.idCategoria = c.idCategoria AND c.NomeCategoria = 'Bebidas';";
        $resultado=$link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  

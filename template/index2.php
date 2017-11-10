@@ -16,21 +16,17 @@
 
   <body>
       <div class="page home-page">
-      <!-- Main Navbar-->
-  
-          <!-- Dashboard Counts Section-->
+      
+          <!--<div style="width:90%;"> -->
           
-          <!-- Dashboard Header Section    -->
-          
-          <!-- Projects Section-->
-          
-          <!-- Client Section-->
-          
-          <!-- Page Footer-->
-          <div style="width:90%;">
-              <div style="margin-left: 10%; width:80%">
-          <div class="card-body" style="width:40%; float: left">
-                    <table class="table table-striped">
+         <div class="card-header d-flex align-items-center" style="width: 90%; height:5%; margin: auto; margin-top: 3%">
+              
+             <div style="margin-left: 5%; width:90%;" >
+                 
+                  <!-- TABLE - DIV LANCHES -->
+                 <div class="card-body" style="width:45%; height: 400px; overflow: auto; float: left; background-attachment: fixed;"> 
+                 
+                   <table class="table table-striped">
                         <thead>
                           <label>Lanches</label>
                           <tr>
@@ -44,11 +40,12 @@
                            $ObjCardapio->MontaTabelaLanches($link);
                         ?>
                         </tbody>
-                    </table>
+                    </table> 
+                  </div> 
                     
                 
-              
-                    <div class="card-body" style=" width:40%; float:right;">
+                  <!-- TABLE - BEBIDAS -->
+                    <div class="card-body" style=" width:45%; height: 400px; overflow: auto; float:right; background-attachment: fixed;">
                       <table class="table table-striped">
                         <thead> 
                           <label> Bebibas</label>
@@ -63,41 +60,59 @@
                         </tbody>
                       </table>
                     </div>
-          </div>
-              <div>
-                  <div>
-                <div style="padding-top:25%; text-align:center">
-                    <form method="GET" action="">
-                    <div class="form-group row">
-                        <div class="card-header d-flex align-items-center" style="margin:auto; width: 40%">
-                            <div class="col-sm-9" style="margin:auto">
-                            <div class="i-checks">
+                  
+         
+                 <!-- <div style="background-color: orange;">
+                  <div style="background-color: grey;"> -->
+                      
+                <!--<div style="padding-top:25%; text-align:center; background-color: blue;">-->
+                    
+                    <!-- FORMULÁRIO - FORMA DE PAGAMENTO  -->
+                    <br><br> <form class="form-horizontal" method="GET" action="">
+                        <div class="form-group row" style="width: auto; display:block; text-align: center; margin-left: auto; margin-right: auto; margin-top: 52%;"> 
+                            <label class="col-sm-3 form-control-label">Forma de pagamento <br><small class="text-primary">Selecione</small></label>
+                           <div class="col-sm-9" style="margin:auto;">
+                             
+                            <!-- OPÇÃO 1 - DINHEIRO -->    
+                            <div class="i-checks" style="text-align: center">
                                 <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom1">Dinheiro</label>
                             </div>
+                            
+                            <!-- OPÇÃO 2 - CARTÃO DE CRÉDITO --> 
                             <div class="i-checks">
                                 <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="sumir(this.value)">
                                 <label for="radioCustom1">Cartão Crédito</label>
                             </div>
+                            
+                            <!-- OPÇÃO 3 - CARTÃO CANTINA --> 
                             <div class="i-checks" >
                                 <input id="radioCustom1" type="radio" value="pagamento" name="pagamento" class="radio-template" onclick="dadosCartao(this.value)">
                                 <label for="radioCustom1">Cartão Cantina</label>
                           </div>
+                                
+                                <!-- AJAX -->
                                 <div id="poll">
                                     
-                                </div> 
-                                <div style="margin: auto">
-                                    <input type="button" class="btn btn-primary" value="Finalizar" >
                                 </div>
                                 
-                            </div>
-                            </div>
+                            <!--</div>
+                            <!-- BOTÃO - FINALIZAR -->
+                               <div style="margin: auto">
+                                   <input type="button" class="btn btn-primary" value="Finalizar" >
+                               </div>
+                            
              
-                    </div>
-                               </form>
+                    <!--</div>-->
+                             
+                    
+                </div>
+                            <!-- FIM DO FORM -->
+                              </form>
                 </div>
                 </div>
-              </div></div>
+              
+              
              
             
        
@@ -105,10 +120,7 @@
        
  
      
-      <?php
-         // include 'rodape.php';
-          ECHO "</div>";
-        ?>
+
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>
