@@ -10,12 +10,35 @@ class Cardapio{
         $this->Data = $_Data;
         $this->Produtos = $_Produtos;
     }
-    
-    //Criar __construct e get set
+    function getIdCardapio() {
+        return $this->IdCardapio;
+    }
+
+    function getData() {
+        return $this->Data;
+    }
+
+    function getProdutos() {
+        return $this->Produtos;
+    }
+
+    function setIdCardapio($IdCardapio) {
+        $this->IdCardapio = $IdCardapio;
+    }
+
+    function setData($Data) {
+        $this->Data = $Data;
+    }
+
+    function setProdutos($Produtos) {
+        $this->Produtos = $Produtos;
+    }
+
+        
     public function MontaTabelaLanches($link){
         $query = "select p.descricao, p.valor, c.NomeCategoria
             from produto as p inner join categoria as c 
-            ON p.idCategoria = c.idCategoria AND c.NomeCategoria <> 'Bebidas';";
+            ON p.idCategoria = c.idCategoria AND c.NomeCategoria <> 'Bebidas' ORDER BY p.Descricao;";
         $resultado = $link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  
@@ -33,7 +56,7 @@ class Cardapio{
     public function MontaTabelaBebidas($link){
         $query = "select p.descricao, p.valor, c.NomeCategoria "
                 . "from produto as p inner join categoria as c ON"
-                . " p.idCategoria = c.idCategoria AND c.NomeCategoria = 'Bebidas';";
+                . " p.idCategoria = c.idCategoria AND c.NomeCategoria = 'Bebidas' ORDER BY p.Descricao;";
        $resultado=$link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  
@@ -47,4 +70,6 @@ class Cardapio{
                    </tr>";
         }
     }
+    
+    
 }

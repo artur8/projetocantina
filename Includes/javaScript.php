@@ -41,7 +41,7 @@ function recarga(int) {
       document.getElementById("poll").innerHTML=this.responseText;
     }
   }
-  xmlhttp.open("GET","dadosRecarga.php?vote="+int,true);
+  xmlhttp.open("GET","dadosRecarga.php?id="+int,true);
   xmlhttp.send();
 }
 </script>

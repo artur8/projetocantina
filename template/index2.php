@@ -18,8 +18,9 @@
       <div class="page home-page">
       
           <!--<div style="width:90%;"> -->
-          
+
          <div class="card-header d-flex align-items-center" style="width: 90%; height:5%; margin: auto; margin-top: 3%; margin-bottom: 3%;">
+
               
              <div style="margin-left: 5%; width:90%; " >
                  
@@ -33,9 +34,9 @@
                         <thead>
                           <label>Lanches</label>
                           <tr>
-                            <th>Lanches</th>
+                            <th>Produtos</th>
                             <th>Preço</th>
-                            <th>Qnts</th>
+                            <th>Quantidade</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -53,9 +54,9 @@
                         <thead> 
                           <label> Bebibas</label>
                           <tr>
-                            <th>Produto</th>
-                            <th>Valor</th>
+                            <th>Produtos</th>
                             <th>Preço</th>
+                            <th>Quantidade</th>
                           </tr>
                         </thead>
                         <tbody>

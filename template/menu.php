@@ -21,7 +21,7 @@
                 <li><a href="cadastroAdministrador.php">Administrador</a></li>
               </ul>
             </li>
-            <li> <a href="tables.php"> <i class="icon-grid"></i>Tables </a></li>
+            <li> <a href="pedidos.php"> <i class="icon-grid"></i>Pedidos </a></li>
             <li> <a href="charts.php"> <i class="fa fa-bar-chart"></i>Charts </a></li>
             <li> <a href="forms.php"> <i class="icon-padnote"></i>Forms </a></li>
             <li> <a href="login.php"> <i class="icon-interface-windows"></i>Login Page</a></li>

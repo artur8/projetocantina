@@ -68,32 +68,32 @@ require_once 'menu.php';
                           
                             <!-- OPÇÃO 1 -->
                             <div class="i-checks">
-                                <input id="radioCustom1" type="radio" value="option1" name="a" class="radio-template" onclick="sumir(this.value)">
-                              <label for="radioCustom1">Opção 1</label>
+                                <input id="radioCustom1" type="radio" value="5" name="a" class="radio-template" onclick="sumir(this.value)">
+                              <label for="radioCustom1">R$5,00</label>
                             </div>
                               
                             <!-- OPÇÃO 2 -->
                             <div class="i-checks">
-                                <input id="radioCustom2" type="radio" value="option2" name="a" class="radio-template" onclick="sumir(this.value)">
-                              <label for="radioCustom2">Opção 2</label>
+                                <input id="radioCustom2" type="radio" value="10" name="a" class="radio-template" onclick="sumir(this.value)">
+                              <label for="radioCustom2">R$10,00</label>
                             </div>
                             
                             <!-- OPÇÃO 3 -->
                             <div class="i-checks">
-                                <input id="radioCustom3" type="radio" value="option3" name="a" class="radio-template" onclick="sumir(this.value)">
-                              <label for="radioCustom3">Opção 3</label>
+                                <input id="radioCustom3" type="radio" value="20" name="a" class="radio-template" onclick="sumir(this.value)">
+                              <label for="radioCustom3">R$20,00</label>
                             </div>
                           
                             <!-- OPÇÃO 4 -->
                             <div class="i-checks">
-                                <input id="radioCustom4" type="radio" value="option4" name="a" class="radio-template" onclick="sumir(this.value)">
-                              <label for="radioCustom3">Opção 4</label>
+                                <input id="radioCustom4" type="radio" value="30" name="a" class="radio-template" onclick="sumir(this.value)">
+                              <label for="radioCustom3">R$30,00</label>
                             </div>
                             
                             <!-- OPÇÃO 5 -->
                             <div class="i-checks">
-                                <input id="radioCustom5" type="radio" value="option5" name="a" class="radio-template" onclick="recarga(this.value)">
-                              <label for="radioCustom3">Opção 5</label>
+                                <input id="radioCustom5" type="radio" value="outro" name="a" class="radio-template" onclick="recarga(this.value)">
+                              <label for="radioCustom3">Outro Valor</label>
                             </div>
                             <br>
                             <div id="poll">
