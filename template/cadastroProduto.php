@@ -4,25 +4,25 @@
      
     <?php
     require_once 'head.php';
-    ?>
-
-  <body>
-      <div class="page home-page">
-      <!-- Main Navbar-->
-<?php 
-require_once 'cabecalho.php';
-require_once 'menu.php';
-
+    require_once '../Classes/Produto.php';
+    require_once 'cabecalho.php';
+    require_once 'menu.php';
+    require_once '../Includes/conexao.php';
+    
 //require_once '../Includes/botao.js';
 //require_once '../Includes/botao.css';
 ?>
-            
+           
+    
+  <body>
+      <div class="page home-page">
+      <!-- Main Navbar-->
         <div class="card-header d-flex align-items-center" style="width: 90%; height:50%; margin: auto; margin-top: 3%;"> 
               
             <div class="card-body style">
                   
                 <!-- INICIO DO FORM -->  
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST">
                        
                     <!-- NOME DO PRODUTO - ENABLED -->
                     <div class="form-group row">
@@ -30,6 +30,10 @@ require_once 'menu.php';
                         <label class="col-sm-3 form-control-label">Nome do Produto</label>
                         <div class="col-sm-9">
                             <input type="text" name="nomeProduto" placeholder="Digite aqui..." class="form-control">
+                        </div><br><br><br>
+                        <label class="col-sm-3 form-control-label">Preço</label>
+                        <div class="col-sm-9">
+                            <input type="integer" name="precoProduto" placeholder="Digite aqui..." class="form-control">
                         </div>
                             
                     </div>
@@ -43,19 +47,15 @@ require_once 'menu.php';
                         <label class="col-sm-3 form-control-label">Tipo <br><small class="text-primary">Selecione</small></label>
                         
                         <div class="col-sm-9">
-                          
-                            <!-- OPÇÃO 1 -->
-                            <div class="i-checks">
-                              <input id="radioCustom1" type="radio" value="option1" name="a" class="radio-template">
-                              <label for="radioCustom1">Comida</label>
-                            </div>
-                              
-                            <!-- OPÇÃO 2 -->
-                            <div class="i-checks">
-                              <input id="radioCustom2" type="radio" value="option2" name="a" class="radio-template">
-                              <label for="radioCustom2">Bebida</label>
-                            </div>
-                            
+
+                                <select name="Categorias" class="form-control">
+                                    <option value="0"> </option>
+                                <?php
+                                     $ObjProduto = new Produto(NULL, NULL, NULL, NULL);
+                                     $ObjProduto->SelectCategoria($link);
+                                ?>
+                            </select>
+       
                         </div>
             
                     </div>
@@ -63,7 +63,16 @@ require_once 'menu.php';
                 <!-- CANCELAR E SALVAR - BUTTON -->
                 <br><br><div class="form-group row">
                             <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <INPUT name="Cadastrar" type="submit" class="btn btn-primary" value="Cadastrar">
+                            <?php 
+                                if(!empty($_POST["Cadastrar"])){
+                                    $ObjProduto->setIdCategoria(filter_input(INPUT_POST,"Categorias"));
+                                    $ObjProduto->setNome(filter_input(INPUT_POST, "nomeProduto"));
+                                    $ObjProduto->setPreco(filter_input(INPUT_POST,"precoProduto"));
+                                    
+                                    $ObjProduto->InsereProdutoBD($link);
+                                }
+                            ?>
                            
                         </div>
                 </form>

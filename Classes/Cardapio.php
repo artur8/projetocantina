@@ -46,7 +46,7 @@ class Cardapio{
                     <td>" . $linha["valor"] ."</td>
                     <td>
                         <form> 
-                            <input style='width:50px' min='0'  type='number'>
+                            <input style='width:50px' min='0'  type='number' onclick='Preco(this.value," . $linha['valor'] . "'>
                         </form>
                     </td>
                    </tr>";

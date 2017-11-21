@@ -108,6 +108,9 @@
                                     <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
                                         <button type="submit" class="btn btn-primary">Finalizar</button>
                                 </div>
+                            <div id="divpreco" style="background-color: red">
+                                
+                            </div>
                            
                           </div>
                             

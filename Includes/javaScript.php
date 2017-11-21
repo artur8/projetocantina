@@ -44,4 +44,9 @@ function recarga(int) {
   xmlhttp.open("GET","dadosRecarga.php?id="+int,true);
   xmlhttp.send();
 }
+function Preco(valor, numero){
+			var div = document.getElementById("divpreco");
+			var total = valor*numero;
+			div.innerText = total;
+        }
 </script>
