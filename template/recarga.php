@@ -103,8 +103,8 @@ require_once 'menu.php';
                             <!-- CANCELAR E SALVAR - BUTTON -->
                             <br><br><div class="form-group row">
                                     <!-- <div class="col-sm-4 offset-sm-3"> -->
-                                    <button type="submit" class="btn btn-secondary">Cancel</button> &nbsp;
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
+                                        <button type="submit" class="btn btn-primary">Recarregar</button>
                                     </div>
                            
                           </div>

@@ -62,7 +62,6 @@ require_once 'menu.php';
                 
                 <!-- CANCELAR E SALVAR - BUTTON -->
                 <br><br><div class="form-group row">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                            
