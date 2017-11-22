@@ -43,8 +43,25 @@ function recarga(int) {
   xmlhttp.open("GET","dadosRecarga.php?id="+int,true);
   xmlhttp.send();
 };
+
+
+/*
+
 function Preco(valor, numero){
     var mostraPreco = document.getElementById("divpreco");
-    var total = valor*numero;
+    var total = total + (valor*numero);
     mostraPreco.innerText = total;
+    xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
+}
+*/
+function Preco(valor, numero){
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+    if (this.readyState===4 && this.status===200) {
+      document.getElementById("divpreco").innerHTML=this.responseText;
+    }
+    };
+  var total = valor * numero;
+  xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
+  xmlhttp.send();
 }
