@@ -9,8 +9,7 @@
     require_once 'menu.php';
     require_once '../Includes/conexao.php';
     
-//require_once '../Includes/botao.js';
-//require_once '../Includes/botao.css';
+    
 ?>
            
     

@@ -1,5 +1,4 @@
- <script>
-function dadosCartao(int) {
+ function dadosCartao(int) {
   if (window.XMLHttpRequest) {
     // code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttp=new XMLHttpRequest();
@@ -7,12 +6,12 @@ function dadosCartao(int) {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
   xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
+    if (this.readyState===4 && this.status===200) {
       document.getElementById("poll").innerHTML=this.responseText;
     }
-  }
+  };
   xmlhttp.open("GET","poll_vote.php?vote="+int,true);
-  xmlhttp.send();
+  xmlhttp.send(); 
 }
 function sumir(int) {
   if (window.XMLHttpRequest) {
@@ -22,10 +21,10 @@ function sumir(int) {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
   xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
+    if (this.readyState===4 && this.status===200) {
       document.getElementById("poll").innerHTML=this.responseText;
     }
-  }
+  };
   xmlhttp.open("GET","sumir.php?vote="+int,true);
   xmlhttp.send();
 }
@@ -37,16 +36,15 @@ function recarga(int) {
     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
   xmlhttp.onreadystatechange=function() {
-    if (this.readyState==4 && this.status==200) {
+    if (this.readyState===4 && this.status===200) {
       document.getElementById("poll").innerHTML=this.responseText;
     }
-  }
+  };
   xmlhttp.open("GET","dadosRecarga.php?id="+int,true);
   xmlhttp.send();
-}
+};
 function Preco(valor, numero){
-			var div = document.getElementById("divpreco");
-			var total = valor*numero;
-			div.innerText = total;
-        }
-</script>
+    var mostraPreco = document.getElementById("divpreco");
+    var total = valor*numero;
+    mostraPreco.innerText = total;
+}
