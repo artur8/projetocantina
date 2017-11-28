@@ -75,6 +75,7 @@ class Cardapio{
         $query= "SELECT NomeCategoria FROM Categoria ORDER BY NomeCategoria;";
         $Categoria = $link->query($query);
         $resultado = " ";
+        $Cat = "";
         while ($linha = $Categoria->fetch_array()) {
             $posicao = $linha ["NomeCategoria"];
             $query = "select * from produto as p "
@@ -82,18 +83,41 @@ class Cardapio{
                     . "ON p.idCategoria = c.idCategoria AND c.NomeCategoria = '" . $posicao. "' ORDER BY p.Descricao;";
             $resultado = $link->query($query);
             
-            echo "<tr>" . $posicao . "<tr>";
+           // echo "<tr>" . $posicao . "<tr>";
             
             while($row=$resultado->fetch_array()){
+                
+                if($Cat != $row["NomeCategoria"]){
+                    echo "<tr>
+                          <td colspan='3' style='background-color:#88dda2; color:black; '><b> " . $row["NomeCategoria"] . "</b></td>
+                          </tr>";
+                          $Cat =  $row["NomeCategoria"];
+                }
+                
                 echo "<tr>"
                 . "<td>" . $row["Descricao"] . "</td>"
                 . "<td>" . $row["Valor"] . "</td>"
-                . "<td><input type='number' min='0' name='" . $row["idProduto"]. "' value='0'></td>"
-                . "</tr>";
+                . "<td>
+                   <div class='center'>
+                   <div class='input-group'>
+                   <span class='input-group-btn'>
+                   <button type='button' class='btn btn-default btn-number' disabled='disabled' data-type='minus' data-field='quant[1]'>
+                   <span class='glyphicon glyphicon-minus'></span>
+                   </button>
+                   </span>
+                   <input type='text' name='quant[1]' class='form-control input-number' value='1' min='1' max='10'>
+                   <span class='input-group-btn'>
+                   <button type='button' class='btn btn-default btn-number' data-type='plus' data-field='quant[1]'>
+                   <span class='glyphicon glyphicon-plus'></span>
+                   </button>
+                   </span>
+                   </div></td>" . "</tr>";
+                
               
             }
-            echo "</table><table class='table table-striped'>";           
+            
         }
+        //<input type='number' min='0' name='" . $row["idProduto"]. "' value='0'>
     }
     
     
