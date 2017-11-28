@@ -65,3 +65,35 @@ function Preco(valor, numero){
   xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
   xmlhttp.send();
 }
+
+//function categoria(str) {
+//    if (str === "") {
+//        document.getElementById("cadastraCategoria").innerHTML = "";
+//        return;
+//    } else { 
+//        xmlhttp.onreadystatechange = function() {
+//            if (this.readyState === 4 && this.status === 200) {
+//                document.getElementById("cadastraCategoria").innerHTML = this.responseText;
+//            }
+//        }}
+//        if (str === 0){
+//         xmlhttp.open("GET","cadastrarCategoria.php?q="+str,true);
+//         xmlhttp.send();
+//        }
+//}
+
+function cpfRecarga(str) {
+    if (str.length == 0) { 
+       // document.getElementById("nome").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("nome").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET", "montaRecarga.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}

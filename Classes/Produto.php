@@ -71,6 +71,7 @@ class Produto{
         while($linha=$resultado->fetch_array()){
             echo "<option value='" . $linha['idCategoria']. "'>" .$linha['NomeCategoria'] ."</option>";
         }
+        
     }
 
     

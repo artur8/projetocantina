@@ -31,7 +31,7 @@ require_once 'menu.php';
                            <div class="form-group row" style="padding-top: 10%">
                           <label class="col-sm-3 form-control-label">CPF</label>
                           <div class="col-sm-9">
-                              <input type="text" name="cpf" placeholder="Digite aqui..." class="form-control">
+                              <input type="text" name="cpf" onblur="cpfRecarga(this.value)" placeholder="Digite aqui..." class="form-control">
                           </div>
                           </div>
                           
@@ -43,7 +43,7 @@ require_once 'menu.php';
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Nome</label>
                           <div class="col-sm-9">
-                            <input type="text" name="nome" disabled="" placeholder="Entrada desabilitada..." class="form-control">
+                            <input type="text" name="nome" id="nome" disabled="" placeholder="Entrada desabilitada..." class="form-control">
                           </div>
                         </div>
                         
@@ -51,7 +51,7 @@ require_once 'menu.php';
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Saldo atual</label>
                           <div class="col-sm-9">
-                            <input type="text" name="saldo" disabled="" placeholder="Entrada desabilitada..." class="form-control">
+                            <input type="text" name="saldo" id="saldo" disabled="" placeholder="Entrada desabilitada..." class="form-control">
                           </div>
                         </div>
                         

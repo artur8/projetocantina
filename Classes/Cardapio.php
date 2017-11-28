@@ -71,5 +71,30 @@ class Cardapio{
         }
     }
     
+    public function MontarCardapios ($link){
+        $query= "SELECT NomeCategoria FROM Categoria ORDER BY NomeCategoria;";
+        $Categoria = $link->query($query);
+        $resultado = " ";
+        while ($linha = $Categoria->fetch_array()) {
+            $posicao = $linha ["NomeCategoria"];
+            $query = "select * from produto as p "
+                    . "inner join categoria as c "
+                    . "ON p.idCategoria = c.idCategoria AND c.NomeCategoria = '" . $posicao. "' ORDER BY p.Descricao;";
+            $resultado = $link->query($query);
+            
+            echo "<tr>" . $posicao . "<tr>";
+            
+            while($row=$resultado->fetch_array()){
+                echo "<tr>"
+                . "<td>" . $row["Descricao"] . "</td>"
+                . "<td>" . $row["Valor"] . "</td>"
+                . "<td><input type='number' min='0' name='" . $row["idProduto"]. "' value='0'></td>"
+                . "</tr>";
+              
+            }
+            echo "</table><table class='table table-striped'>";           
+        }
+    }
+    
     
 }

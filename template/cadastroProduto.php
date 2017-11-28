@@ -47,17 +47,22 @@
                         
                         <div class="col-sm-9">
 
-                                <select name="Categorias" class="form-control">
-                                    <option value="0"> </option>
+                            <select name="Categorias" class="form-control" onclick="categoria(this.value)">
+                                <option value="nada"> </option>
+                                    <option value="0" name="cadastrar"> Cadastrar Categoria</option>
                                 <?php
                                      $ObjProduto = new Produto(NULL, NULL, NULL, NULL);
                                      $ObjProduto->SelectCategoria($link);
                                 ?>
                             </select>
+                            
        
                         </div>
             
                     </div>
+                <div id="cadastraCategoria">
+                    
+                </div>
                 
                 <!-- CANCELAR E SALVAR - BUTTON -->
                 <br><br><div class="form-group row">
@@ -77,16 +82,15 @@
                 </form>
               
             </div>
-             
+        </div></div>             
             
        
           
        
  
-     
       <?php
-         // include 'rodape.php';
-          ECHO "</div>";
+        // include 'rodape.php';
+         ECHO "</body>";
         ?>
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -107,5 +111,4 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-  </body>
 </html>
