@@ -1,34 +1,73 @@
-   <script src="scripts/main.js">
-   jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
-    jQuery('.quantity').each(function() {
-      var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
+//plugin bootstrap minus and plus
+//http://jsfiddle.net/laelitenetwork/puJ6G/
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
 
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
         }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
         }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
     });
-   </script>

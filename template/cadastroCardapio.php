@@ -16,13 +16,11 @@
 
   <body>
       <div class="page home-page">
-      
-          <!--<div style="width:90%;"> -->
-          
+         
          <div class="card-header d-flex align-items-center" style="width: 90%; height:5%;  margin: auto; margin-bottom: 8%; margin-top: 3%">
               
              <div style="margin-left: 5%; width:90%;" >
-                 <table class='table table-striped'>
+                <table class='table table-striped'>
                           <tr>
                             <th>Produtos</th>
                             <th>Valor</th>
@@ -30,19 +28,15 @@
                             
                           </tr>
                         <tbody>
-                      
                             <?php $ObjCardapio->MontarCardapios($link);?>
-                           
-             
-
+                        </tbody>
+                </table>
 
             <div style="margin: auto">
                 <input type="button" class="btn btn-primary" value="Finalizar" >
             </div>
 
-                </div>
-                            <!-- FIM DO FORM -->
-                              </form>
+                </div>                      
                 </div>
                 </div>
                 </div>

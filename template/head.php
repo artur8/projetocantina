@@ -20,6 +20,7 @@
     <script src="https://use.fontawesome.com/99347ac47f.js"></script>
    
     <script src="../Includes/javaScript.js"></script>
+    <script src="../Includes/botao.js"></script>
     <!-- Font Icons CSS-->
     <link rel="stylesheet" href="https://file.myfontastic.com/da58YPMQ7U5HY8Rb6UxkNf/icons.css">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
