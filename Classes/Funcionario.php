@@ -59,9 +59,12 @@ class Funcionario extends Usuario{
         $this->RG = $RG;
     }
     
+    function VerificaLogin($link){
+        
+    }
   
         
         
     }
     
-}
+

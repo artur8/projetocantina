@@ -11,7 +11,7 @@
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
               <div class="navbar-header">
-                <!-- Navbar Brand --><a href="index.php" class="navbar-brand">
+                <!-- Navbar Brand --><a href="index2.php" class="navbar-brand">
                   <div class="brand-text brand-big hidden-lg-down"><span> </span><strong>ApliCantina</strong></div>
                   <div class="brand-text brand-small"><strong>AP</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>

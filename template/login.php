@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-<?php
+    <head>
+        <?php
 require_once 'head.php';
+require_once '../Classes/Funcionario.php';
+require_once '../Include/conexao.php';
 ?>
+    </head>
   <body>
     <div class="page login-page">
       <div class="container d-flex align-items-center">

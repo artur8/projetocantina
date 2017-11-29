@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <?php
+    session_start();
     require_once 'head.php';
+    require_once 'cabecalho.php';
+    require_once 'menu.php';
+    require_once '../Classes/Cartao.php';
+    require_once '../Includes/conexao.php';
     ?>
-
-  <body>
+    </head>
+    <body>
     <div class="page home-page">
       <!-- Main Navbar-->
-<?php 
-require_once 'cabecalho.php';
-require_once 'menu.php';
-?>
       <!--<br><br><form name = "recarga" action= " " method = "POST">
       <label class="col-sm-3 form-control-label">CPF:</label>
        <input type="text" class="form-control" style = "width:300px">
@@ -25,25 +27,25 @@ require_once 'menu.php';
 
                         
                       <!-- INICIO DO FORM -->  
-                      <form class="form-horizontal">
-                        
+                      <form class="form-horizontal" method="POST" action="recarga.php">
+                          
                            <!-- CPF - ENABLED -->
                            <div class="form-group row" style="padding-top: 10%">
                           <label class="col-sm-3 form-control-label">CPF</label>
                           <div class="col-sm-9">
-                              <input type="text" name="cpf" onblur="cpfRecarga(this.value)" placeholder="Digite aqui..." class="form-control">
+                              <input type="text" name="cpf" onchange="cpfRecarga(this.value)" placeholder="Digite aqui..." class="form-control">
                           </div>
                           </div>
                           
                         <div class="line"></div>
                         <div class="line"></div>
                        
-                        
+                        <div id="recarga">
                         <!-- NOME - DISABLED -->
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Nome</label>
                           <div class="col-sm-9">
-                            <input type="text" name="nome" id="nome" disabled="" placeholder="Entrada desabilitada..." class="form-control">
+                            <input type="text" name="nome"  disabled="" placeholder="Entrada desabilitada..." class="form-control">
                           </div>
                         </div>
                         
@@ -51,10 +53,10 @@ require_once 'menu.php';
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Saldo atual</label>
                           <div class="col-sm-9">
-                            <input type="text" name="saldo" id="saldo" disabled="" placeholder="Entrada desabilitada..." class="form-control">
+                            <input type="text" name="saldo"  disabled="" placeholder="Entrada desabilitada..." class="form-control">
                           </div>
                         </div>
-                        
+                        </div>
                         
                         
                         <div class="line"></div>
@@ -68,31 +70,31 @@ require_once 'menu.php';
                           
                             <!-- OPÇÃO 1 -->
                             <div class="i-checks">
-                                <input id="radioCustom1" type="radio" value="5" name="a" class="radio-template" onclick="sumir(this.value)">
+                                <input id="radioCustom1" type="radio" value="5" name="Valor" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom1">R$5,00</label>
                             </div>
                               
                             <!-- OPÇÃO 2 -->
                             <div class="i-checks">
-                                <input id="radioCustom2" type="radio" value="10" name="a" class="radio-template" onclick="sumir(this.value)">
+                                <input id="radioCustom2" type="radio" value="10" name="Valor" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom2">R$10,00</label>
                             </div>
                             
                             <!-- OPÇÃO 3 -->
                             <div class="i-checks">
-                                <input id="radioCustom3" type="radio" value="20" name="a" class="radio-template" onclick="sumir(this.value)">
+                                <input id="radioCustom3" type="radio" value="20" name="Valor" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom3">R$20,00</label>
                             </div>
                           
                             <!-- OPÇÃO 4 -->
                             <div class="i-checks">
-                                <input id="radioCustom4" type="radio" value="30" name="a" class="radio-template" onclick="sumir(this.value)">
+                                <input id="radioCustom4" type="radio" value="30" name="Valor" class="radio-template" onclick="sumir(this.value)">
                               <label for="radioCustom3">R$30,00</label>
                             </div>
                             
                             <!-- OPÇÃO 5 -->
                             <div class="i-checks">
-                                <input id="radioCustom5" type="radio" value="outro" name="a" class="radio-template" onclick="recarga(this.value)">
+                                <input id="radioCustom5" type="radio" value="outro" name="Valor" class="radio-template" onclick="recarga(this.value)">
                               <label for="radioCustom3">Outro Valor</label>
                             </div>
                             <br>
@@ -104,9 +106,20 @@ require_once 'menu.php';
                             <br><br><div class="form-group row">
                                     <!-- <div class="col-sm-4 offset-sm-3"> -->
                                     <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
-                                        <button type="submit" class="btn btn-primary">Recarregar</button>
+                                    <input type="submit" class="btn btn-primary" name="Recarregar" value="Recarregar">
                                     </div>
                            
+                            <?php
+                                    if(!empty($_POST["Recarregar"])){
+                                        
+                                        if($_POST["Valor"] != "outro"){
+                                            $ObjCartao = new Cartao(NULL, NULL, NULL, NULL, NULL, NULL, $_SESSION["cartao"], $_SESSION["saldo"]);
+                                            $ObjCartao->Recarregar($link, $_POST["Valor"]);
+                                        }
+                     
+                                   }
+                                
+                            ?>
                           </div>
                             
 
