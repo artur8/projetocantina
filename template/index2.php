@@ -7,9 +7,9 @@ require_once '../Classes/Usuario.php';
 
 $ObjUsuario = new Usuario(NULL, NULL, NULL, NULL, NULL, NULL);
 
-if(!$ObjUsuario->Verifica()){
-    header('Location:login.php');
-}
+//if(!$ObjUsuario->Verifica()){
+//    header('Location:login.php');
+//}
 
 
 $ObjCardapio = new Cardapio(NULL, NULL, NULL);
@@ -32,7 +32,7 @@ $ObjCardapio = new Cardapio(NULL, NULL, NULL);
       
           <!--<div style="width:90%;"> -->
 
-         <div class="card-header d-flex align-items-center" style="width: 90%; height:5%; margin: auto; margin-top: 3%; margin-bottom: 3%;">
+         <div class="card-header d-flex align-items-center" style="width: 90%;  margin: auto; margin-top: 3%; margin-bottom: 3%;">
 
               
              <div style="margin-left: 5%; width:90%; " >
