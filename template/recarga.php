@@ -23,17 +23,24 @@
       <div class="card-header d-flex align-items-center" style="width: 90%; height:70%; margin: auto; margin-top: 3%"> 
      
           <div class="card-body">
+              <?php
+              if(!empty(filter_input(INPUT_GET, "CPF"))){
+                  $CPF = filter_input(INPUT_GET, "CPF");
+              }else{
+                  $CPF = "";
+              }
+              ?>
                           
 
                         
                       <!-- INICIO DO FORM -->  
-                      <form class="form-horizontal" method="POST" action="recarga.php">
+                      <form id="Formulario" class="form-horizontal" method="POST" action="recarga.php">
                           
                            <!-- CPF - ENABLED -->
                            <div class="form-group row" style="padding-top: 10%">
                           <label class="col-sm-3 form-control-label">CPF</label>
                           <div class="col-sm-9">
-                              <input type="text" name="cpf" onchange="cpfRecarga(this.value)" placeholder="Digite aqui..." class="form-control">
+                              <input type="text" name="cpf" onmousemove="cpfRecarga(this.value)" placeholder="Digite aqui..." value="<?php echo $CPF; ?>" class="form-control">
                           </div>
                           </div>
                           
@@ -106,7 +113,7 @@
                             <br><br><div class="form-group row">
                                     <!-- <div class="col-sm-4 offset-sm-3"> -->
                                     <button type="submit" class="btn btn-secondary">Cancelar</button> &nbsp;
-                                    <input type="submit" class="btn btn-primary" name="Recarregar" value="Recarregar">
+                                    <input type="submit" id="recarregar" class="btn btn-primary" name="Recarregar" value="Recarregar">
                                     </div>
                            
                             <?php
@@ -115,11 +122,16 @@
                                         if($_POST["Valor"] != "outro"){
                                             $ObjCartao = new Cartao(NULL, NULL, NULL, NULL, NULL, NULL, $_SESSION["cartao"], $_SESSION["saldo"]);
                                             $ObjCartao->Recarregar($link, $_POST["Valor"]);
+                                       }else if($_POST["Valor"] == "outro"){
+                                            $ObjCartao = new Cartao(NULL, NULL, NULL, NULL, NULL, NULL, $_SESSION["cartao"], $_SESSION["saldo"]);
+                                            $ObjCartao->Recarregar($link, $_POST["recarga"]);
                                         }
                      
                                    }
+                                   
                                 
                             ?>
+                        
                           </div>
                             
 

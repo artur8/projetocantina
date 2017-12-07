@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  
 <html>
-    
+    <head>   <title> </title>
   
     <?php
     require_once '../Includes/conexao.php';
@@ -11,9 +11,9 @@
     require_once '../Classes/Cardapio.php';
     
     $ObjCardapio = new Cardapio(NULL, NULL, NULL);
-    
+   
     ?>
-
+    </head>
   <body>
       <div class="page home-page">
          
@@ -39,18 +39,6 @@
                 </div>                      
                 </div>
                 </div>
-                </div>
-                </div>
-              
-              
-             
-            
-       
-          
-       
- 
-     
-
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>

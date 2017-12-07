@@ -5,7 +5,13 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">Mark Stephen</h1>
+                <h1 class="h4">
+                    <?php
+                    if(!empty($_SESSION["Nome"])){
+                      echo $_SESSION["Nome"];
+                    }
+                    ?>
+                </h1>
               <p>Web Designer</p>
             </div>
           </div>
@@ -22,6 +28,7 @@
               </ul>
             </li>
             <li> <a href="pedidos.php"> <i class="icon-grid"></i>Pedidos </a></li>
+            <li><a href="clientesTabela.php"> <i class="icon-grid"></i>Clientes</a></li>
             <!--<li> <a href="charts.php"> <i class="fa fa-bar-chart"></i>Charts </a></li>
             <li> <a href="forms.php"> <i class="icon-padnote"></i>Forms </a></li>-->
             <li> <a href="login.php"> <i class="icon-interface-windows"></i>Login Page</a></li>

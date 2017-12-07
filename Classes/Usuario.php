@@ -1,8 +1,7 @@
 <?php
-//session_start();
-//require_once '../../../Includes/conexao.php';
+
 require_once '../Includes/conexao.php';
-//require_once '../../../Includes/conexao.php';
+
 class Usuario{
     protected $IdUsuario;
     protected $Nome;
@@ -10,9 +9,6 @@ class Usuario{
     protected $Senha;
     protected $DataNasc;
     protected $CPF;
-
-
-
 
     public function __construct($_IdUsuario, $_Nome, $_DataNasc, $_Email, $_Senha, $_CPF) {
         $this->IdUsuario = $_IdUsuario;
@@ -66,24 +62,25 @@ class Usuario{
         
     if($link->affected_rows == 1){
         $linha = $resultado->fetch_array();
-        $_SESSION['Nome'] = $linha['NomeUsuario'];
+        $_SESSION['Nome'] = $linha['Nome'];
         $_SESSION['Email'] = $this->Email;
-        setcookie('LogadoFuncionario', 1, time()+60*10);
-        header("Location:index_funcionario.php");
+        setcookie('Logado', 1, time()+60*10);
+        header("Location:index2.php");
         
-    } else {
+    } else if($link->affected_rows == 0){
         
-        $query = "SELECT * FROM Usuario AS U INNER JOIN Administrador AS A ON A.idUsuario = U.idUsuario "
+        $query = "SELECT * FROM Usuario AS U INNER JOIN SuperAdm AS S ON S.idUsuario = U.idUsuario "
                 . "WHERE Email LIKE '$this->Email' AND Senha LIKE '$this->Senha'; ";
-        //echo "<h1>Adm  " .$query . "</h1>";
         $resultado = $link->query($query);
         if($link->affected_rows == 1){
             $linha = $resultado->fetch_array();
-            $_SESSION['Nome'] = $linha['NomeUsuario'];
+            $_SESSION['Nome'] = $linha['Nome'];
             $_SESSION['Email'] = $this->Email;
-            setcookie('LogadoAdmin', 1, time()+60*10);
-            header("Location:index_admin.php");
+            setcookie('Logado', 2, time()+60*10);
+            header("Location:index2.php");
         
+     } else{
+         echo "alert('Login inválido')";
      } 
      }
      }
@@ -99,5 +96,24 @@ class Usuario{
           $query = "DELETE FROM Usuario WHERE Email like '$this->Email';";
           $link->query($query) or die($link->error);
       }
+      
+      public function UpdateUsuario($link){
+          $query = "UPDATE Usuario SET Nome='". $this->Nome . "', Email= '" .$this->Email. "', Senha =' " . $this->Senha."',"
+                  . " DataNasc ='".$this->DataNasc. "', CPF='" . $this->CPF . "' WHERE idUsuario = $this->IdUsuario;";
+         // echo "<h1>" . $query . "</h1>";
+          $link->query($query) or die ($link->error);
+          
+      }
+      
+      public function Verifica(){
+          if(empty($_COOKIE['Logado']) || empty($_SESSION['Nome']) ){
+              return FALSE;
+          }
+          else {
+              return TRUE;
+          }
+      }
+
+     
       
 }

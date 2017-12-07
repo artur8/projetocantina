@@ -1,20 +1,33 @@
-<!DOCTYPE html>
+<?php
+session_start();
+require_once '../Includes/conexao.php';
+
+require_once '../Classes/Cardapio.php';
+require_once '../Classes/Usuario.php';
+
+$ObjUsuario = new Usuario(NULL, NULL, NULL, NULL, NULL, NULL);
+
+if(!$ObjUsuario->Verifica()){
+    header('Location:login.php');
+}
+
+
+$ObjCardapio = new Cardapio(NULL, NULL, NULL);
+?>
  
 <html>
     
-  
+    <head>
     <?php
-    require_once '../Includes/conexao.php';
     require_once 'head.php';
     require_once 'cabecalho.php';
     require_once 'menu.php';
-    require_once '../Classes/Cardapio.php';
     
-    $ObjCardapio = new Cardapio(NULL, NULL, NULL);
-    
+ 
     ?>
-
+    </head>
   <body>
+      
       <div class="page home-page">
       
           <!--<div style="width:90%;"> -->
@@ -25,9 +38,13 @@
              <div style="margin-left: 5%; width:90%; " >
                  
                   <!-- TABLE - DIV LANCHES -->
-                  <div>
-                         <label class="col-sm-3 form-control-label">Produtos</label>
-                        </div>
+                       <div>
+                            <form id="searchForm" action="#" role="search">
+                                <input type="search" placeholder="Pesquise" class="form-control" onkeyup="pesquisa(this.value)">
+                            </form>
+                       </div>
+                  <div id="busca">
+                         </div>
                  <div class="card-body" style="width:45%; height: 400px; overflow: auto; float: left; background-attachment: fixed;"> 
                  
                    <table class="table table-striped">
@@ -48,7 +65,7 @@
                   </div> 
                     
                 
-                  <!-- TABLE - BEBIDAS -->
+                  
                     <div class="card-body" style=" width:45%; height: 400px; overflow: auto; float:right; background-attachment: fixed;">
                       <table class="table table-striped">
                         <thead> 
@@ -65,7 +82,7 @@
                       </table>
                     </div>
                   
-         
+               
                
                     
                     <!-- FORMULÁRIO - FORMA DE PAGAMENTO  -->

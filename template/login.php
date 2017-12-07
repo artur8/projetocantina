@@ -4,7 +4,9 @@
         <?php
 require_once 'head.php';
 require_once '../Classes/Funcionario.php';
-require_once '../Include/conexao.php';
+require_once '../Classes/Administrador.php';
+require_once '../Includes/conexao.php';
+session_start();
 ?>
     </head>
   <body>
@@ -30,13 +32,13 @@ require_once '../Include/conexao.php';
                 <div class="content">
                   <form id="login-form" method="post">
                     <div class="form-group">
-                      <input id="login-username" type="text" name="loginUsername" required="" class="input-material">
+                      <input id="login-username" type="text" name="email" required="" class="input-material">
                       <label for="login-username" class="label-material">E-mail</label>
                     </div>
                     <div class="form-group">
-                      <input id="login-password" type="password" name="loginPassword" required="" class="input-material">
+                      <input id="login-password" type="password" name="senha" required="" class="input-material">
                       <label for="login-password" class="label-material">Senha</label>
-                    </div><a id="login" href="index.html" class="btn btn-primary">Login</a>
+                    </div><input type="submit" id="login" value="Login" name="Login" class="btn btn-primary">
                     <!-- This should be submit button but I replaced it with <a> for demo purposes-->
                   </form><a href="#" class="forgot-pass">Esqueceu sua senha?</a><br>
                 </div>
@@ -45,6 +47,13 @@ require_once '../Include/conexao.php';
           </div>
         </div>
       </div>
+        
+        <?php
+        if(!empty($_POST["Login"])){
+            $ObjUsuario = new Usuario(NULL, NULL, NULL, $_POST["email"], $_POST["senha"],NULL);
+            $ObjUsuario->Login($link);
+        }
+        ?>
       <div class="copyrights text-center">
         <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a></p>
         <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->

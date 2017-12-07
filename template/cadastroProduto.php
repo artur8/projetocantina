@@ -47,9 +47,9 @@
                         
                         <div class="col-sm-9">
 
-                            <select name="Categorias" class="form-control" onclick="categoria(this.value)">
+                            <select name="Categorias" class="form-control" onchange="categoria(this.value)">
                                 <option value="nada"> </option>
-                                    <option value="0" name="cadastrar"> Cadastrar Categoria</option>
+                                    <option value="cadastrar" name="cadastrar"> Cadastrar Categoria</option>
                                 <?php
                                      $ObjProduto = new Produto(NULL, NULL, NULL, NULL);
                                      $ObjProduto->SelectCategoria($link);

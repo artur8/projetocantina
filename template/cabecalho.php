@@ -1,4 +1,4 @@
-      <header class="header">
+      
         <nav class="navbar">
           <!-- Search Box-->
           <div class="search-box">
@@ -68,9 +68,9 @@
                   </ul>
                 </li>
                 <!-- Logout    -->
-                <li class="nav-item"><a href="login.php" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="finalizaSessao.php" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
         </nav>
-      </header>
+      
