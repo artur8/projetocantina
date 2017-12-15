@@ -1,10 +1,10 @@
 <!DOCTYPE html>
  
 <html>
-     
-    <?php
-    require_once 'head.php';
-    ?>
+    <head>
+        <?php
+             require_once 'head.php';
+         ?>
 
   <body>
       <div class="page home-page">
@@ -16,8 +16,8 @@ require_once 'menu.php';
 //require_once '../Includes/botao.js';
 //require_once '../Includes/botao.css';
 ?>
-     <section class="tables">   
-            <div class="container-fluid">
+     <section class="tables">
+         <div class="container-fluid">
               <div class="row">
                 <div class="col-lg-6">
                     <div class="card" style="width: 50%">
@@ -37,7 +37,11 @@ require_once 'menu.php';
                   </div>
 
       
+                </div>
+         <section>
       
+                </div>
+     </section>
       
       
       

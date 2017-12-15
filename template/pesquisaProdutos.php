@@ -5,7 +5,7 @@
     $busca = $_GET["busca"];
     if(strlen($busca)>3){
       
-    $query="SELECT * FROM produto where Descricao like '" . $busca . "%';";
+    $query="SELECT * FROM cardapio AS c INNER JOIN produto AS p ON p.idProduto=c.idProduto AND Descricao like '" . $busca . "%';";
     $resultado =$link->query($query);
     echo ' <div style="margin-left: 5%; width:90%; " >'
     . ' <table class="table table-striped">

@@ -54,17 +54,17 @@ function Preco(valor, numero){
     xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
 }
 */
-function Preco(valor, numero){
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange=function() {
-    if (this.readyState===4 && this.status===200) {
-      document.getElementById("divpreco").innerHTML=this.responseText;
-    }
-    };
-  var total = valor * numero;
-  xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
-  xmlhttp.send();
-}
+//function Preco(valor, numero){
+//    xmlhttp = new XMLHttpRequest();
+//    xmlhttp.onreadystatechange=function() {
+//    if (this.readyState===4 && this.status===200) {
+//      document.getElementById("divpreco").innerHTML=this.responseText;
+//    }
+//    };
+//  var total = valor * numero;
+//  xmlhttp.open("GET","atualiza_preco.php?valor="+total,true);
+//  xmlhttp.send();
+//}
 
 function categoria(valor){
    xmlhttp = new XMLHttpRequest();
@@ -146,4 +146,16 @@ function LimparInputs(){
     $("#Formulario :input").each(function () {
         $(this).val('');
     } );
+}
+
+function huhu(quantidade, id){
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+    if (this.readyState===4 && this.status===200) {
+      document.getElementById("divpreco").innerHTML=this.responseText;
+    }
+    }
+  //var total = valor * numero;
+  xmlhttp.open("GET","gerenciarCompra.php?qnts="+quantidade + "&id=" +id,true);
+  xmlhttp.send();
 }

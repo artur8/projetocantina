@@ -27,7 +27,13 @@ $ObjCardapio = new Cardapio(NULL, NULL, NULL);
     ?>
     </head>
   <body>
-      
+      <h1> 
+          <?php
+           
+//      date_default_timezone_set('America/Brazil');
+//      echo date ('G:i'); 
+      ?>
+      </h1>
       <div class="page home-page">
       
           <!--<div style="width:90%;"> -->

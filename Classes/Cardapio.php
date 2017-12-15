@@ -36,9 +36,11 @@ class Cardapio{
 
         
     public function MontaTabelaLanches($link){
-        $query = "select p.descricao, p.valor, c.NomeCategoria
-            from produto as p inner join categoria as c 
-            ON p.idCategoria = c.idCategoria AND c.NomeCategoria <> 'Bebidas' ORDER BY p.Descricao;";
+        $query = "select p.idProduto, p.descricao, p.valor, c.NomeCategoria, card.Quantidade"
+                . " from produto as p inner join categoria as c ON p.idCategoria = c.idCategoria "
+                . "INNER JOIN cardapio as card ON card.idProduto = p.idProduto"
+                . " AND c.NomeCategoria <> 'Bebidas' ORDER BY p.Descricao;";
+        
         $resultado = $link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  
@@ -46,7 +48,8 @@ class Cardapio{
                     <td>" . $linha["valor"] ."</td>
                     <td>
                         <form> 
-                            <input style='width:50px' min='0'  type='number' onClick='Preco(this.value," . $linha['valor'] . ")'>
+                        <input style='width:50px' min='0'  type='number' onchange='huhu(this.value," . $linha['idProduto'] . ")'>
+
                         </form>
                     </td>
                    </tr>";
@@ -54,9 +57,10 @@ class Cardapio{
     }
     
     public function MontaTabelaBebidas($link){
-        $query = "select p.descricao, p.valor, c.NomeCategoria "
-                . "from produto as p inner join categoria as c ON"
-                . " p.idCategoria = c.idCategoria AND c.NomeCategoria = 'Bebidas' ORDER BY p.Descricao;";
+        $query = "select p.descricao, p.valor, c.NomeCategoria, card.Quantidade"
+                . " from produto as p inner join categoria as c ON p.idCategoria = c.idCategoria"
+                . " INNER JOIN cardapio as card ON card.idProduto = p.idProduto AND c.NomeCategoria = 'Bebidas' "
+                . " ORDER BY p.Descricao;";
        $resultado=$link->query($query);
         while($linha=$resultado->fetch_array()){
             echo "<tr>  
